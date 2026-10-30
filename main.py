@@ -3,8 +3,8 @@ import os, time, datetime, requests
 from apscheduler.schedulers.blocking import BlockingSchedule
 
 # ========= 你的兩個鑰匙貼在這裡 =========
-LINE_CHANNEL_ACCESS_TOKEN =a9IrdgImyiGz4L8htLrs64OALS0k8QEzYV+1Wz2lH9dzzJ/AD3Smv/DvVFvMSLYFKRZv2XV7YCvfZCF171jgH3QgVFnPyUEMDXv/r21LLOpeowDlNS0aNv 
-LINE_USER_ID =U7a7a47a9a5e589a09aecdd0d14a3defc 
+LINE_CHANNEL_ACCESS_TOKEN = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+LINE_USER_ID = os.environ.get("LINE_USER_ID")
 
 CONFIG = {
     "routes": ["台中->台北", "台中->左營"],
