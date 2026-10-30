@@ -1,1 +1,19 @@
+name: 高鐵12點代理人
+on:
+  schedule:
+    - cron: '50 15 * * *'
+  workflow_dispatch:
 
+jobs:
+  book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install
+        run: pip install requests apscheduler
+      - name: Run
+        run: python main.py
