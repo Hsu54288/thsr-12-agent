@@ -1,6 +1,6 @@
 
 import os, time, datetime, requests
-from apscheduler.schedulers.blocking import BlockingSchedule
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 # ========= 你的兩個鑰匙貼在這裡 =========
 LINE_CHANNEL_ACCESS_TOKEN = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
