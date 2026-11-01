@@ -1,7 +1,6 @@
-name: 高鐵12點代理人
+name: 12點代理人搶票 v5.1 手動版 (你按才跑)
+
 on:
-  schedule:
-    - cron: '50 15 * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,10 +12,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      - name: Install
-        run: pip install requests apscheduler
-      - name: Run
+      - name: Install deps
+        run: pip install requests
+      - name: Run bot (手動才跑)
         env:
-          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
-          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+          LINE_CHANNEL_TOKEN: ${{ secrets.LINE_CHANNEL_TOKEN }}
         run: python main.py
